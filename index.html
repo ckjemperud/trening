@@ -247,5 +247,20 @@ window.onload = loadProgress;
 
   window.onload = loadProgress;
 </script>
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    user.getIdTokenResult().then(idTokenResult => {
+      const role = idTokenResult.claims.role;
+      const coachSection = document.getElementById("coach-only-section");
+      if (role === "coach") {
+        coachSection.style.display = "block";
+      } else {
+        coachSection.style.display = "none";
+      }
+    });
+  }
+});
+</script><div id="coach-only-section" style="display:none; margin-top:20px;">This section is visible only to users with the 'coach' role.
 </body>
 </html>
