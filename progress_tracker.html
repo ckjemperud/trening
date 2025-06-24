@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub API Progress Saver</title>
+</head>
+<body>
+  <h2>Progress Tracker</h2>
+  <label>
+    <input type="checkbox" id="progressCheckbox"> Task Completed
+  </label>
+  <br>
+  <textarea id="commentBox" placeholder="Add a comment..."></textarea>
+  <br>
+  <button onclick="saveProgress()">Save Progress</button>
+
+  <script>
+    async function saveProgress() {
+      const checked = document.getElementById('progressCheckbox').checked;
+      const comment = document.getElementById('commentBox').value;
+
+      const payload = {
+        checked: checked,
+        comment: comment
+      };
+
+      const response = await fetch('/.netlify/functions/save-progress', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+      alert(result.message || 'Progress saved.');
+    }
+  </script>
+</body>
+</html>
