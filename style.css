@@ -57,3 +57,37 @@ header, footer {
     flex: 1 1 100%;
   }
 }
+.ny-økt {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ny-økt form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ny-økt input,
+.ny-økt textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.ny-økt button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ny-økt button:hover {
+  background-color: #218838;
+}
