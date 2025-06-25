@@ -1,10 +1,11 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="no">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Løpeprogram 10 uker</title>
 <link rel="stylesheet"  href="style.css" />
 <style>
@@ -18,7 +19,10 @@
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
 </head>
 <body>
-<h1>Løpeprogram 10 uker</h1>
+
+<!--Løpeøkten i klartekst-->
+
+  <h1>Løpeprogram 10 uker</h1>
 <h2>Uke 25</h2>
 <div class="session">
 <input id="cb-Uke_25_s0" onchange="saveProgress('Uke_25_s0')" type="checkbox"/>
@@ -203,7 +207,7 @@ function loadProgress() {
     area.value = localStorage.getItem('comment-' + id) || '';
   });
 }
-
+// Koble til Firebase
 window.onload = loadProgress;</script>
 <script>
   const firebaseConfig = {
@@ -248,5 +252,7 @@ window.onload = loadProgress;</script>
 
   window.onload = loadProgress;
 </script>
+<!--Legge til script for å redigere økter-->
+<script src="edit.js"></script>
 </body>
 </html>
