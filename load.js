@@ -5,7 +5,7 @@ import {
 
 const db = window.db;
 
-export function overvåkØkter() {
+export function monitorsession() {
   const økterRef = collection(db, "økter");
   const container = document.querySelector(".økt-liste");
 
