@@ -257,6 +257,10 @@ window.onload = loadProgress;</script>
 <!--Legge til script for å redigere økter-->
 <script src="edit.js"></script>
 <!--hente fra firebase-->
-<script type="module" src="load.js"></script>
+<script type="module">
+  import { overvåkØkter } from "./load.js";
+  overvåkØkter();
+</script>
+
 </body>
 </html>
