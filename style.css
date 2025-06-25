@@ -58,32 +58,3 @@ textarea {
   background: #e6f9ec;
   box-shadow: 0 0 0 3px #c3f3d6;
 }
-
-
-header, footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-.container {
-  width: 90%;
-  max-width: 900px;
-  margin: 2rem auto;
-}
-
-.økt-liste {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.økt {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1 1 300px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
