@@ -23,26 +23,6 @@
 <!--Løpeøkten i klartekst-->
 
 <h1>Løpeprogram 10 uker</h1>
-<!--LEgge til ny økt-->
-<section class="ny-økt">
-  <h2>Legg til ny økt</h2>
-  <form id="øktForm">
-    <label for="tittel">Tittel:</label>
-    <input type="text" id="tittel" required />
-
-    <label for="dato">Dato:</label>
-    <input type="date" id="dato" required />
-
-    <label for="varighet">Varighet:</label>
-    <input type="text" id="varighet" required />
-
-    <label for="kommentar">Kommentar:</label>
-    <textarea id="kommentar"></textarea>
-
-    <button type="submit">Legg til</button>
-  </form>
-</section>
-
 <h2>Uke 25</h2>
 <div class="session">
 <input id="cb-Uke_25_s0" onchange="saveProgress('Uke_25_s0')" type="checkbox"/>
@@ -274,7 +254,5 @@ window.onload = loadProgress;
 
   window.onload = loadProgress;
 </script>
-<!--knytte til script for å legge til økt-->
-<script type="module" src="add.js"></script>
 </body>
 </html>
