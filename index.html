@@ -20,8 +20,19 @@
 </head>
 <body>
 
-<!--Løpeøkten i klartekst-->
+<!--Innlogging-->
+<section class="auth">
+  <h2>Logg inn</h2>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="E-post" required />
+    <input type="password" id="password" placeholder="Passord" required />
+    <button type="submit">Logg inn</button>
+  </form>
+  <button id="logoutBtn" style="display:none;">Logg ut</button>
+</section>
 
+
+<!--Løpeøkten i klartekst-->
 <h1>Løpeprogram 10 uker</h1>
 <h2>Uke 25</h2>
 <div class="session">
@@ -254,5 +265,7 @@ window.onload = loadProgress;
 
   window.onload = loadProgress;
 </script>
+<!--For innloggin-->
+<script type="module" src="auth.js"></script>
 </body>
 </html>
