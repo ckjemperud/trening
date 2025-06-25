@@ -3,7 +3,7 @@ const firebaseConfig = {
   authDomain: "trening-92895.firebaseapp.com",
   databaseURL: "https://trening-92895-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "trening-92895",
-  storageBucket: "trening-92895.appspot.com",
+  storageBucket: "trening-92895.firebasestorage.app",
   messagingSenderId: "781948442599",
   appId: "1:781948442599:web:4dc7d7f575b49147fe4f42",
   measurementId: "G-6ZQTDKQ3B4",
@@ -21,15 +21,6 @@ function saveProgress(id) {
   };
   db.ref('progress/' + id).set(data);
   document.getElementById('label-' + id).classList.toggle('completed', checkbox.checked);
-
-  const sessionDiv = checkbox.closest('.session');
-  if (checkbox.checked) {
-    sessionDiv.classList.add('completed');
-    sessionDiv.classList.remove('incomplete');
-  } else {
-    sessionDiv.classList.add('incomplete');
-    sessionDiv.classList.remove('completed');
-  }
 }
 
 function loadProgress() {
@@ -52,34 +43,14 @@ function loadProgress() {
 
       if (comment) comment.value = session.comment || '';
       if (label) label.classList.toggle('completed', session.checked);
-
-      const sessionDiv = checkbox.closest('.session');
-      if (session.checked) {
-        sessionDiv.classList.add('completed');
-        sessionDiv.classList.remove('incomplete');
-      } else {
-        sessionDiv.classList.add('incomplete');
-        sessionDiv.classList.remove('completed');
-      }
     });
 
     if (firstUnchecked) {
       const sessionDiv = firstUnchecked.closest('.session');
+      sessionDiv.classList.add('next');
       sessionDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   });
-}
-
-function toggleWeek(weekId) {
-  const container = document.getElementById(weekId);
-  container.classList.toggle('hidden');
-
-  const header = container.previousElementSibling;
-  if (container.classList.contains('hidden')) {
-    header.innerHTML = header.innerHTML.replace('🔽', '▶️');
-  } else {
-    header.innerHTML = header.innerHTML.replace('▶️', '🔽');
-  }
 }
 
 window.onload = loadProgress;

@@ -11,31 +11,20 @@ body {
 h1, h2 {
   text-align: center;
   color: #444;
-  cursor: pointer;
-  user-select: none;
-}
-
-.week-sessions {
-  transition: max-height 0.3s ease;
-  overflow: hidden;
-}
-
-.week-sessions.hidden {
-  display: none;
 }
 
 .session {
   background: #fff;
+  border-left: 5px solid #007bff;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   transition: background 0.3s ease;
-  border-left: 5px solid #007bff;
 }
 
-.session.completed {
-  border-left-color: #28a745;
+.session:hover {
+  background: #f0f8ff;
 }
 
 input[type="checkbox"] {
@@ -62,4 +51,10 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+}
+
+.session.next {
+  border-left-color: #28a745;
+  background: #e6f9ec;
+  box-shadow: 0 0 0 3px #c3f3d6;
 }
