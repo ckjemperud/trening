@@ -1,4 +1,7 @@
-import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {
+  doc,
+  updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const db = window.db;
 
@@ -29,11 +32,7 @@ document.addEventListener("click", async (e) => {
         kommentar: nyKommentar
       });
 
-      datoEl.textContent = nyDato;
-      varighetEl.textContent = nyVarighet;
-      kommentarEl.textContent = nyKommentar;
-      btn.textContent = "Rediger";
-      btn.classList.remove("lagre");
+      // Ikke nødvendig å oppdatere DOM – onSnapshot gjør det for oss!
     }
   }
 });
