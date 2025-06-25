@@ -253,5 +253,19 @@ window.onload = loadProgress;
 
   window.onload = loadProgress;
 </script>
+
+<!--hoppe til føste ikke gjennomførte økt-->
+<script>
+  window.addEventListener('load', () => {
+    const sessions = document.querySelectorAll('.session');
+    for (const session of sessions) {
+      const checkbox = session.querySelector('input[type="checkbox"]');
+      if (checkbox && !checkbox.checked) {
+        session.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        break;
+      }
+    }
+  });
+</script>
 </body>
 </html>
